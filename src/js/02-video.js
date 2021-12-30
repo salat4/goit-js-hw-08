@@ -15,14 +15,14 @@ player.on('play', function() {
     console.log('played the video!');
 });
 
-const _saveLocalTime = function _locTime(e) {
+const saveLocalTime = function locTime(e) {
 
 localStorage.setItem('videoplayer-current-time', e.seconds);
     console.log(e.seconds)
 
     
 };
-player.on('timeupdate', throttle(_saveLocalTime, 2000))
+player.on('timeupdate', throttle(saveLocalTime, 2000))
 
 let curTime = localStorage.getItem('videoplayer-current-time');
 startValueTime();
