@@ -23,9 +23,9 @@ localStorage.setItem('videoplayer-current-time', e.seconds);
     
 };
 player.on('timeupdate', throttle(saveLocalTime, 2000))
-
-let curTime = localStorage.getItem('videoplayer-current-time');
 startValueTime();
+let curTime = localStorage.getItem('videoplayer-current-time');
+
 player.setCurrentTime(curTime).then(function (event) {
     localStorage.setItem('videoplayer-current-time', curTime);
 });
